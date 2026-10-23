@@ -1372,3 +1372,263 @@ span {
         margin-bottom: 30px;
     }
 }
+
+
+/* mobile for navbar and hero image  */
+
+/* =====================================
+   GYMFIT MOBILE RESPONSIVE FIX
+   ===================================== */
+
+@media screen and (max-width: 600px) {
+
+    /* Prevent horizontal overflow */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    header.header {
+        width: 100%;
+        padding: 16px 14px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        box-sizing: border-box;
+    }
+
+    /* Keep logo and button on the same row */
+    header.header .logo {
+        max-width: 65%;
+        flex-shrink: 1;
+    }
+
+    header.header .logo h1,
+    header.header .logo h2 {
+        margin: 0;
+    }
+
+    header.header nav {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 22px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 10px 0 8px;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+
+    header.header nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    header.header nav a {
+        display: inline-block;
+        flex: 0 0 auto;
+        font-size: 13px;
+        line-height: 1.5;
+        white-space: nowrap;
+    }
+
+    /* HERO SECTION */
+    section.hero {
+        width: 100%;
+        min-height: 0;
+        height: auto;
+        padding: 0;
+        margin: 0;
+        position: relative;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        box-sizing: border-box;
+    }
+
+    .hero .hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-height: 510px;
+        height: auto;
+        margin: 0;
+        padding: 90px 20px 45px;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1;
+    }
+
+    .hero-content h1 {
+        max-width: 100%;
+        font-size: clamp(32px, 9vw, 43px);
+        line-height: 1.12;
+        letter-spacing: -1px;
+        overflow-wrap: break-word;
+        margin: 14px 0 20px;
+    }
+
+    .hero-content h2 {
+        font-size: clamp(13px, 3.8vw, 16px);
+        line-height: 1.6;
+        letter-spacing: 1.5px;
+        margin-bottom: 18px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+        line-height: 1.8;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+    /* Hero buttons */
+    .hero-content .hero-buttons,
+    .hero-content .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .hero-content a {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* Prevent the next section from covering the hero */
+    section.hero + section {
+        position: relative;
+        margin-top: 0;
+        clear: both;
+    }
+
+    /* General responsive images */
+    img {
+        max-width: 100%;
+    }
+}
+
+/* Extra-small phones */
+@media screen and (max-width: 380px) {
+    header.header {
+        padding: 13px 12px;
+    }
+
+    header.header nav {
+        gap: 18px;
+    }
+
+    header.header nav a {
+        font-size: 12px;
+    }
+
+    .hero .hero-content {
+        min-height: 480px;
+        padding: 70px 16px 35px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+}
+
+
+/* ===== Hamburger menu (mobile only) ===== */
+.menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+
+  header.header {
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  /* Join Now sits next to the hamburger */
+  header.header > .btn-login {
+    margin-left: auto;
+  }
+
+  /* Hamburger button */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 42px;
+    height: 42px;
+    padding: 10px;
+    background: transparent;
+    border: 1px solid #3a3b3d;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  /* Turns into an X when open */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Nav is hidden until the menu is opened */
+  header.header nav {
+    display: none;
+    order: 3;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    overflow: visible;
+    white-space: normal;
+    padding: 8px 0 0;
+    margin-top: 6px;
+    border-top: 1px solid #292a2c;
+  }
+
+  /* Open state: JS adds "menu-open" to the header */
+  header.header.menu-open nav {
+    display: flex;
+  }
+
+  /* Links must be visible when the nav is open */
+  header.header nav a {
+    display: block;
+    flex: none;
+    padding: 13px 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-bottom: 1px solid #222325;
+  }
+
+  header.header nav a:last-child {
+    border-bottom: none;
+  }
+}
