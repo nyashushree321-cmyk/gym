@@ -24,7 +24,10 @@
       <a href="#why-us">Why Us</a>
       <a href="#testimonials">Reviews</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+      <!-- <a href="#contact">Contact</a> -->
+       <a href="#contact-details" class="contact-btn">
+    Contact
+</a>
       <a href="#goals">Goals</a>
       <a href="#nutrition">Nutrition</a>
       <a href="#benefits">Benefits</a>
@@ -833,8 +836,87 @@
     <p class="eyebrow">YOUR TIME IS NOW</p>
     <h2>READY TO CHANGE<br>YOUR <span>LIFE?</span></h2>
     <p>Start today. Get stronger every day.</p>
-    <a href="#contact" class="btn">Contact Us ↗</a>
+   
+
+
   </section>
+
+<section class="contact-section" id="contact-details">
+    <div class="contact-heading">
+        <span>LET'S CONNECT</span>
+        <!-- <h2>LET'S BUILD YOUR<br>
+            <span>STRONGER FUTURE.</span>
+        </h2>
+        <p>
+            Have questions about membership or training?
+            Contact our team and start your fitness journey.
+        </p> -->
+    </div>
+
+    <div class="contact-layout">
+        <div class="contact-details">
+            <div class="detail-card">
+                <span>☎</span>
+                <h3>Call Us</h3>
+                <p>+91 98765 43210</p>
+            </div>
+
+            <div class="detail-card">
+                <span>✉</span>
+                <h3>Email Us</h3>
+                <p>info@gymfit.com</p>
+            </div>
+
+            <div class="detail-card">
+                <span>⌖</span>
+                <h3>Visit Us</h3>
+                <p>Your gym address, Your City</p>
+            </div>
+
+            <div class="detail-card">
+                <span>◷</span>
+                <h3>Opening Hours</h3>
+                <p>Monday – Saturday</p>
+                <p>5:00 AM – 10:00 PM</p>
+            </div>
+        </div>
+
+       
+<form class="contact-form" id="contactForm">
+
+    <h3>Send Us An Enquiry</h3>
+    <p>Let's talk about your fitness goals.</p>
+
+    <input type="text" name="name"
+           placeholder="Full Name" required>
+
+    <input type="email" name="email"
+           placeholder="Email Address" required>
+
+    <input type="tel" name="phone"
+           placeholder="Phone Number">
+
+    <textarea name="message"
+              placeholder="Your Message"
+              rows="5" required></textarea>
+
+    <button type="submit">SEND ENQUIRY ↗</button>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="success-message"
+         role="status" aria-live="polite">
+        <span>✓</span>
+        <div>
+            <strong>Message Sent Successfully!</strong>
+            <p>Thank you for contacting GymFit.
+               We'll get back to you soon.</p>
+        </div>
+    </div>
+
+</form>
+
+    </div>
+</section>
 
   <!-- Footer -->
   <footer class="footer">
@@ -842,6 +924,7 @@
     <p>Stronger every day. © 2026 GymFit Gym.</p>
     <a href="#home">Back to top ↑</a>
   </footer>
+
 
 
 
@@ -893,6 +976,33 @@ window.addEventListener("resize", () => {
     menuToggle.classList.remove("active");
   }
 });
+
+
+
+
+
+
+
+
+
+const contactForm = document.getElementById("contactForm");
+const successMessage = document.getElementById("successMessage");
+
+contactForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    // Show the success message
+    successMessage.classList.add("show");
+
+    // Clear the form fields
+    contactForm.reset();
+
+    // Hide the message automatically after 5 seconds
+    setTimeout(function () {
+        successMessage.classList.remove("show");
+    }, 5000);
+});
+
 </script>
 
 <script src="script.js"></script>
